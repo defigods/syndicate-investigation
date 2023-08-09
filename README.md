@@ -130,7 +130,7 @@ After that, I did take an in-depth review for [LSD contracts Github repository](
     }
     ```
 
-    `0xF5D92B01c478273bD13aA8efb130D98e131ecBB9`: This address is `GiantSavETHPool` contract address.
+    `0xF5D92B01c478273bD13aA8efb130D98e131ecBB9`: This address is `GiantSavETHPool` contract address.<br/>
     `0x1e8e121c97be5a590f44d0bde9942c107b0be951`: This address is `SavETHVault` address for DREAM LSD network.
 
     But two contracts are all not verified and so many transactions to analyze.<br/>
@@ -211,14 +211,19 @@ After that, I did take an in-depth review for [LSD contracts Github repository](
   }
   ```
 
-  `0x12670b896176c37913e62297e059ec5a00d5a171`: This address is Liquid Staking Manager contract address, IMO.
+  `0x12670b896176c37913e62297e059ec5a00d5a171`: This address is Liquid Staking Manager contract address, IMO.<br/>
   `0x941208d2a5c02142dbd66e02b84e2c75204a2732`: This address is DREAM LSD network's `feesAndMevPool` address.
 
   By using this query, I could confirm two of the payout types.
 
   ```
   payouts(
-    where: { recipient_in: ["0x12670b896176c37913e62297e059ec5a00d5a171", "0x941208d2a5c02142dbd66e02b84e2c75204a2732"] }
+    where: {
+      recipient_in: [
+        "0x12670b896176c37913e62297e059ec5a00d5a171",
+        "0x941208d2a5c02142dbd66e02b84e2c75204a2732"
+      ]
+    }
   ) {
     id
     amount
